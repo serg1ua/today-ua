@@ -1,0 +1,34 @@
+{% extends "news/base.html" %}
+
+{% load static %}
+{% block content %}
+{% for row in articles_3 %}
+<div class="col-sm-12 col-md-4 col-lg-3 main">
+  <a href="{% url 'article' row.tag row.header %}"><img class="media-large" src="{% static row.image %}" alt="img"></a>
+    <div class="caption">
+      <time>{{row.date}}</time>
+      <a href="{% url 'article' row.tag row.header %}"> <h5>{{row.header}}</h5></a>
+      <p>{{row.six_fifty}}</p>
+    </div>
+</div><hr/>
+{% empty %}
+  <h3>No news here</h3>
+{% endfor %}
+{% endblock %}
+<div id="addition" class='addition'>
+{% block addition %}
+{% for row in articles_7 %}
+  <div class="media">
+    <div class="media-left">
+      <a href="{% url 'article' row.tag row.header %}"><img class="media-object" src="{% static row.image %}"></a>
+    </div>
+    <div class="media-body">
+      <time>{{ row.date }}</time>
+      <a href="{% url 'article' row.tag row.header %}"><h5 class="media-heading">{{ row.header }}</h5></a>
+    </div>
+  </div>
+{% endfor %}
+<hr id="endblock"/>
+<button id="more" type="button" class="btn btn-primary">Більше новин</button>
+{% endblock %}
+</div>

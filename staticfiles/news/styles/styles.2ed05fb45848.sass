@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald|Roboto|Roboto+Condensed|Roboto+Slab')
+
+//Variables
+$max-size:   100%
+$foot-size:  60px
+$blue:       #009efa
+$yellow:      yellow
+
+//Mixins
+
+//Styles
+
+html
+  position: relative
+  min-height: $max-size
+
+body
+  height: $max-size
+  font-family: 'Roboto', 'Roboto Condensed', 'Roboto Slab', 'Oswald', sans-serif, serif
+  margin: 0
+  padding: 0
+  margin-bottom: $foot-size
+
+.hamburger:before
+  content: "\2261"
+  font: 1.6rem "arial"
+
+.hamburger
+  display: block
+  cursor: pointer
+  border: 2px solid #fff
+  -moz-border-radius: 3px
+  -webkit-border-radius: 3px
+  border-radius: 3px
+  text-decoration: none !important
+  color: #fff
+  padding: 4px 10px
+  margin-top: 15px
+  margin-bottom: 5px
+  float: left
+
+.hamburger:hover
+  color: $yellow !important
+  border: 2px solid $yellow
+
+#headerRow
+  height: 80px
+
+.ukraine1, .dateShort,
+.hamburger
+  display: none
+
+.ukraine
+  width: 90px
+
+.colToday
+  background-color: $blue
+  color: $yellow
+
+.colUa
+  background-color: $yellow
+  color: $blue
+
+.colToday, .colUa
+    font-size: 4rem
+    text-align: center
+
+.date
+    margin-bottom: -1rem
+    margin-top: -0.8rem
+    font-size: .7rem
+    color: white
+
+.today
+  margin-bottom: 0
+
+.page-header
+  margin-top: 10px
+  margin-left: 5px
+  color: $blue
+
+.active
+  -moz-border-radius: 2px !important
+  -webkit-border-radius: 2px !important
+  border-radius: 2px !important
+  background-color: $blue !important
+
+.media-object
+  margin-right: 5px
+  width: 64px !important
+
+.media
+  margin: 20px
+
+.articleImage
+  float: left !important
+  margin-right: 15px !important
+
+.addition
+  width: 90%
+  margin: auto
+
+.btn
+  margin-left: 35%
+  width: 30%
+  margin-bottom: 16px
+  background-color: $blue
+
+  color: #fff
+
+
+.footer
+  position: absolute
+  width: 100%
+  height: $foot-size
+  background-color: $blue
+  bottom: 0
+
+footer .text
+  padding-top: 20px
+  text-align: center
+  color:  $yellow
+  font-size: 1rem
+
+.fa
+  color: $yellow
+
+@media screen and (max-width: 767px)
+  .hamburger
+    display: block
+    margin-top: 15px
+    padding: 4px 10px
+    font-size: .6rem
+  .colToday .today, .colUa
+    font-size: 3rem
+    text-align: center
+  .ukraine, .d-none
+    display: none !important
+  .ukraine1
+    display: block
+    margin-top: 15px
+    width: 70px
+  .dateShort
+    font-size: 0.6rem
+    text-align: center
+
+@media screen and (min-width: 425px) and (max-width: 576px)
+  .hamburger
+    display: block
+    padding: 4px 10px
+  .topper
+    height: 80px
+  .colToday .today
+    font-size: 2.2rem
+    text-align: center
+  .dateShort, .colToday
+    font-size: 0.6rem
+    text-align: center
+  .dateShort
+    display: block
+    color: white
+  .ukraine1
+    display: block
+    margin-top: 15px
+    width: 50px
+  .ukraine, .date,
+    display: none
+  .btn
+    width: 50%
+    margin-left: 25%
+
+@media screen and(min-width: 280px) and (max-width: 424px)
+  .topper
+    height: 60px
+  .hamburger
+    display: block
+    padding: 2px 6px
+    margin-top: 12px
+  .colToday .today
+    font-size: 1.4rem
+    text-align: center
+  .colUa
+    font-size: 2.0rem
+  .dateShort, .colToday
+    font-size: .45rem
+    text-align: center
+  .dateShort
+    display: block
+    color: white
+  .ukraine, .date
+    display: none
+  .ukraine1
+    display: block
+    margin-top: 12px
+    width: 35px
+  .articleImage
+    width: 100%
+    margin-bottom: 15px
+  .btn
+    width: 60%
+    margin-left: 20%
+

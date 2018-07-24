@@ -1,0 +1,15 @@
+{% extends "news/base.html" %}
+
+{% load static %}
+{% block title %} {{ article.tag }} {% endblock %}
+{% block header %} {{ article.tag }}{% endblock %}
+{% block content %}
+  <div  class="col-lg-9 col-md-9 col-sm-12">
+    <div id="img" class="articleImage">
+      <img class="media-large" src="{% static article.image %}">
+    </div>
+    <h4 id="title">{{article.header}}</h4>
+    <span id="content"></span>
+  </div>
+{% endblock %}
+{% block addition %}{% endblock %}

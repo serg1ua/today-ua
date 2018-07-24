@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html>
+{% load static %}
+  <head>
+    <title>TodayUA: {% block title %}{{ title }}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="{% static 'news/bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'news/styles/styles.css' %}">
+    <link rel="icon" href="{% static 'news/images/header_cr1.jpg' %}" type="image/x-icon">
+  </head>
+  <body>
+  <div class="header">
+    <div class="container-fluid">
+      <div class="row topper">
+        <div class="col-8 col-md-8 colToday">
+          <div class="row" id="headerRow">
+            <div class="col-3">
+              <img id="ukraine" class="ukraine" src="{% static 'news/images/ukraine.jpg' %}" alt="">
+              <p id="hamburger" class="hamburger"></p>
+                <div class="row">
+                  <div class="col-6">
+                 </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-6">
+              <p class="today">TODAY</p>
+              <p id="date" class="date"></p>
+              <p id="dateShort" class="dateShort"></p>
+            </div>
+            <div class="col-3">
+              <img id="ukraine1" class="ukraine1" src="{% static 'news/images/ukraine.jpg' %}" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="col-4 col-md-4 colUa">
+          <p>UA</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="container-fluid">
+      <h3 id="header" class="page-header">
+      {% block header %} {{ title }} {% endblock %}
+      </h3><hr/>
+      <div class="row">
+        <nav id="nav" class="col-sm-3 col-md-3 col-lg-2  d-none d-sm-block bg-light sidebar">
+          <ul class="nav nav-pills flex-column">
+            <li class="nav-item">
+              <a id="index" class="nav-link" href="{% url 'main' %}">Головна</a>
+            </li>
+            <li class="nav-item">
+              <a id="world" class="nav-link" href="{% url 'section' 'Світ' %}">Світ</a>
+            </li>
+            <li class="nav-item">
+              <a id="ua" class="nav-link" href="{% url 'section' 'УкраЇна' %}">УкраЇна</a>
+            </li>
+            <li class="nav-item">
+              <a id="politics" class="nav-link" href="{% url 'section' 'Політика' %}">Політика</a>
+            </li>
+            <li class="nav-item">
+              <a id="economics" class="nav-link" href="{% url 'section' 'Економіка' %}">Економіка</a>
+            </li>
+            <li class="nav-item">
+              <a id="science" class="nav-link" href="{% url 'section' 'Наука' %}">Наука</a>
+            </li>
+            <li class="nav-item">
+              <a id="culture" class="nav-link" href="{% url 'section' 'Культура' %}">Культура</a>
+            </li>
+            <li class="nav-item">
+              <a id="sports" class="nav-link" href="{% url 'section' 'Спорт' %}">Спорт</a>
+            </li>
+          </ul><hr>
+          <div id="SinoptikInformer" style="width:160px;" class="SinoptikInformer type4c1"><div class="siHeader"><div class="siLh"><div class="siMh"><a onmousedown="siClickCount();" class="siLogo" href="https://ua.sinoptik.ua/" target="_blank" rel="nofollow" title="Погода"> </a>Погода </div></div></div><div class="siBody"><div class="siTitle"><span id="siHeader"></span></div><a onmousedown="siClickCount();" href="https://ua.sinoptik.ua/погода-київ" title="Погода у Києві" target="_blank" rel="nofollow"><div class="siCity"><div class="siCityName">Погода у <span>Києві</span></div><div id="siCont0" class="siBodyContent"><div class="siLeft"><div class="siTerm"></div><div class="siT" id="siT0"></div><div id="weatherIco0"></div></div><div class="siInf"><p>вологість: <span id="vl0"></span></p><p>тиск: <span id="dav0"></span></p><p>вітер: <span id="wind0"></span></p></div></div></div></a><div class="siLinks">Погода на <a href="https://ua.sinoptik.ua/" title="Погода" target="_blank" rel="nofollow" onmousedown="siClickCount();">sinoptik.ua</a></div></div><div class="siFooter"><div class="siLf"><div class="siMf"></div></div></div></div><script type="text/javascript" charset="UTF-8" src="//sinoptik.ua/informers_js.php?title=3&amp;wind=2&amp;cities=303010783&amp;lang=ua"></script>
+          <hr>
+        </nav>
+        {% block content %}{% endblock %}
+      </div>
+      <div id="addition" class='addition'>
+      {% block addition %}{% endblock %}
+      </div>
+    </div>
+      <footer class="footer">
+        <div class='container-fluid'>
+          <p class="text"><span id="year"></span>. &copy; Serhii, Zobov:
+          <a href="https://facebook.com/serg1.ua" target="_blank"><i class="fa fa-fw fa-facebook-f fa-lg"></i></a>
+          <a href="https://portfolio-web-lab.herokuapp.com/" target="_blank"><i class="fa fa-globe fa-lg"></i></a>
+          <a href="https://www.freecodecamp.com/serg1ua" target="_blank"><i class="fa fa-fw fa-free-code-camp fa-lg"></i></a>
+          </p>
+        </div>
+      </footer>
+      <script type="text/javascript" src="{% static 'news/scripts/jquery-3.3.1.min.js' %}"></script>
+      <script type="text/javascript" src="{% static 'news/scripts/popper.min.js' %}"></script>
+      <script type="text/javascript" src="{% static 'news/bootstrap/js/bootstrap.min.js' %}"></script>
+      <script type="text/javascript" src="{% static 'news/scripts/scripts.js' %}"></script>
+  </body>
+</html>
